@@ -1,0 +1,128 @@
+---- Minecraft Crash Report ----
+// Hey, that tickles! Hehehe!
+
+Time: 12/22/20 10:57 AM
+Description: Exception in server tick loop
+
+java.lang.NoSuchMethodError: net.minecraft.entity.projectile.ProjectileHelper.func_221273_a(Lnet/minecraft/entity/Entity;Lnet/minecraft/util/math/vector/Vector3d;Lnet/minecraft/util/math/vector/Vector3d;Lnet/minecraft/util/math/AxisAlignedBB;Ljava/util/function/Predicate;D)Lnet/minecraft/util/math/EntityRayTraceResult;
+	at net.silentchaos512.gear.util.GearHelper.tryAttackWithExtraReach(GearHelper.java:541) ~[silentgear:2.4.4+189] {re:classloading}
+	at net.silentchaos512.gear.util.GearHelper.onItemSwing(GearHelper.java:493) ~[silentgear:2.4.4+189] {re:classloading}
+	at net.silentchaos512.gear.network.GearLeftClickPacket.handle(GearLeftClickPacket.java:20) ~[silentgear:2.4.4+189] {re:classloading}
+	at net.minecraftforge.fml.network.simple.IndexedMessageCodec.lambda$tryDecode$3(IndexedMessageCodec.java:128) ~[forge:?] {re:classloading}
+	at java.util.Optional.ifPresent(Unknown Source) ~[?:1.8.0_271] {}
+	at net.minecraftforge.fml.network.simple.IndexedMessageCodec.tryDecode(IndexedMessageCodec.java:128) ~[forge:?] {re:classloading}
+	at net.minecraftforge.fml.network.simple.IndexedMessageCodec.consume(IndexedMessageCodec.java:162) ~[forge:?] {re:classloading}
+	at net.minecraftforge.fml.network.simple.SimpleChannel.networkEventListener(SimpleChannel.java:80) ~[forge:?] {re:classloading}
+	at net.minecraftforge.eventbus.EventBus.doCastFilter(EventBus.java:247) ~[eventbus-3.0.5-service.jar:?] {}
+	at net.minecraftforge.eventbus.EventBus.lambda$addListener$11(EventBus.java:239) ~[eventbus-3.0.5-service.jar:?] {}
+	at net.minecraftforge.eventbus.EventBus.post(EventBus.java:297) ~[eventbus-3.0.5-service.jar:?] {}
+	at net.minecraftforge.fml.network.NetworkInstance.dispatch(NetworkInstance.java:84) ~[forge:?] {re:classloading}
+	at net.minecraftforge.fml.network.NetworkHooks.lambda$onCustomPayload$1(NetworkHooks.java:88) ~[forge:?] {re:classloading}
+	at java.util.Optional.map(Unknown Source) ~[?:1.8.0_271] {}
+	at net.minecraftforge.fml.network.NetworkHooks.onCustomPayload(NetworkHooks.java:88) ~[forge:?] {re:classloading}
+	at net.minecraft.network.play.ServerPlayNetHandler.func_147349_a(ServerPlayNetHandler.java:1413) ~[?:?] {re:classloading,pl:accesstransformer:B}
+	at net.minecraft.network.play.client.CCustomPayloadPacket.func_148833_a(CCustomPayloadPacket.java:42) ~[?:?] {re:classloading,pl:runtimedistcleaner:A}
+	at net.minecraft.network.play.client.CCustomPayloadPacket.func_148833_a(CCustomPayloadPacket.java:12) ~[?:?] {re:classloading,pl:runtimedistcleaner:A}
+	at net.minecraft.network.PacketThreadUtil.func_225383_a(SourceFile:21) ~[?:?] {re:classloading}
+	at net.minecraft.util.concurrent.TickDelayedTask.run(SourceFile:18) ~[?:?] {re:classloading}
+	at net.minecraft.util.concurrent.ThreadTaskExecutor.func_213166_h(SourceFile:144) ~[?:?] {re:classloading,pl:accesstransformer:B}
+	at net.minecraft.util.concurrent.RecursiveEventLoop.func_213166_h(SourceFile:23) ~[?:?] {re:classloading}
+	at net.minecraft.server.MinecraftServer.func_213166_h(MinecraftServer.java:733) ~[?:?] {re:classloading,pl:accesstransformer:B,pl:runtimedistcleaner:A}
+	at net.minecraft.server.MinecraftServer.func_213166_h(MinecraftServer.java:159) ~[?:?] {re:classloading,pl:accesstransformer:B,pl:runtimedistcleaner:A}
+	at net.minecraft.util.concurrent.ThreadTaskExecutor.func_213168_p(SourceFile:118) ~[?:?] {re:classloading,pl:accesstransformer:B}
+	at net.minecraft.server.MinecraftServer.func_213205_aW(MinecraftServer.java:716) ~[?:?] {re:classloading,pl:accesstransformer:B,pl:runtimedistcleaner:A}
+	at net.minecraft.server.MinecraftServer.func_213168_p(MinecraftServer.java:710) ~[?:?] {re:classloading,pl:accesstransformer:B,pl:runtimedistcleaner:A}
+	at net.minecraft.util.concurrent.ThreadTaskExecutor.func_213160_bf(SourceFile:103) ~[?:?] {re:classloading,pl:accesstransformer:B}
+	at net.minecraft.server.MinecraftServer.func_213202_o(MinecraftServer.java:695) ~[?:?] {re:classloading,pl:accesstransformer:B,pl:runtimedistcleaner:A}
+	at net.minecraft.server.MinecraftServer.func_240802_v_(MinecraftServer.java:645) ~[?:?] {re:classloading,pl:accesstransformer:B,pl:runtimedistcleaner:A}
+	at net.minecraft.server.MinecraftServer.lambda$startServer$0(MinecraftServer.java:232) ~[?:?] {re:classloading,pl:accesstransformer:B,pl:runtimedistcleaner:A}
+	at java.lang.Thread.run(Unknown Source) [?:1.8.0_271] {}
+
+
+A detailed walkthrough of the error, its code path and all known details is as follows:
+---------------------------------------------------------------------------------------
+
+-- System Details --
+Details:
+	Minecraft Version: 1.16.4
+	Minecraft Version ID: 1.16.4
+	Operating System: Windows 10 (amd64) version 10.0
+	Java Version: 1.8.0_271, Oracle Corporation
+	Java VM Version: Java HotSpot(TM) 64-Bit Server VM (mixed mode), Oracle Corporation
+	Memory: 8219562680 bytes (7838 MB) / 10737418240 bytes (10240 MB) up to 10737418240 bytes (10240 MB)
+	CPUs: 24
+	JVM Flags: 20 total; -Xms10G -Xmx10G -XX:+UseG1GC -XX:+ParallelRefProcEnabled -XX:MaxGCPauseMillis=200 -XX:+UnlockExperimentalVMOptions -XX:+DisableExplicitGC -XX:+AlwaysPreTouch -XX:G1NewSizePercent=30 -XX:G1MaxNewSizePercent=40 -XX:G1HeapRegionSize=8M -XX:G1ReservePercent=20 -XX:G1HeapWastePercent=5 -XX:G1MixedGCCountTarget=4 -XX:InitiatingHeapOccupancyPercent=15 -XX:G1MixedGCLiveThresholdPercent=90 -XX:G1RSetUpdatingPauseTimePercent=5 -XX:SurvivorRatio=32 -XX:+PerfDisableSharedMem -XX:MaxTenuringThreshold=1
+	ModLauncher: 8.0.6+85+master.325de55
+	ModLauncher launch target: fmlserver
+	ModLauncher naming: srg
+	ModLauncher services: 
+		/mixin-0.8.2.jar mixin PLUGINSERVICE 
+		/eventbus-3.0.5-service.jar eventbus PLUGINSERVICE 
+		/forge-1.16.4-35.1.4.jar object_holder_definalize PLUGINSERVICE 
+		/forge-1.16.4-35.1.4.jar runtime_enum_extender PLUGINSERVICE 
+		/accesstransformers-2.2.0-shadowed.jar accesstransformer PLUGINSERVICE 
+		/forge-1.16.4-35.1.4.jar capability_inject_definalize PLUGINSERVICE 
+		/forge-1.16.4-35.1.4.jar runtimedistcleaner PLUGINSERVICE 
+		/mixin-0.8.2.jar mixin TRANSFORMATIONSERVICE 
+		/forge-1.16.4-35.1.4.jar fml TRANSFORMATIONSERVICE 
+	FML: 35.1
+	Forge: net.minecraftforge:35.1.4
+	FML Language Providers: 
+		javafml@35.1
+		minecraft@1
+	Mod List: 
+		pamhc2trees-1.16.3-1.0.0.jar                      |Pam's HarvestCraft 2 Fruit Tre|pamhc2trees                   |1.0.0               |DONE      |NOSIGNATURE
+		Wyrmroost-1.16.3-1.2.7.jar                        |Wyrmroost                     |wyrmroost                     |1.16.3-1.2.7        |DONE      |NOSIGNATURE
+		jei-1.16.4-7.6.0.62.jar                           |Just Enough Items             |jei                           |7.6.0.62            |DONE      |NOSIGNATURE
+		prefab-1.6.4.1.jar                                |Prefab                        |prefab                        |1.6.4.1             |DONE      |NOSIGNATURE
+		Scannable-MC1.16.4-1.7.1.7.jar                    |Scannable                     |scannable                     |1.7.1.7             |DONE      |NOSIGNATURE
+		invtweaks-1.16.2-1.0.0.jar                        |Inventory Tweaks Renewed      |invtweaks                     |1.16.2-1.0.0        |DONE      |NOSIGNATURE
+		create-mc1.16.3_v0.3a.jar                         |Create                        |create                        |mc1.16.3_v0.3a      |DONE      |NOSIGNATURE
+		CookingForBlockheads_1.16.3-9.2.2.jar             |Cooking for Blockheads        |cookingforblockheads          |9.2.2               |DONE      |NOSIGNATURE
+		Placebo-1.16.3-4.3.3.jar                          |Placebo                       |placebo                       |4.3.3               |DONE      |NOSIGNATURE
+		Bookshelf-1.16.4-9.3.18.jar                       |Bookshelf                     |bookshelf                     |9.3.18              |DONE      |ea:45:b3:82:b6:9d:50:16:95:e7:2e:34:e1:92:d5:b4:9b:69:90:d3:4f:2e:71:99:b0:be:40:80:27:1f:3e:b0
+		pneumaticcraft-repressurized-1.16.4-2.8.1-96.jar  |PneumaticCraft: Repressurized |pneumaticcraft                |1.16.4-2.8.1-96     |DONE      |NOSIGNATURE
+		Morpheus-1.16.4-4.2.68.jar                        |Morpheus                      |morpheus                      |4.2.68              |DONE      |NOSIGNATURE
+		Hwyla-forge-1.10.11-B78_1.16.2.jar                |Waila                         |waila                         |1.10.11-B78_1.16.2  |DONE      |NOSIGNATURE
+		WAWLA-1.16.4-7.0.2.jar                            |WAWLA                         |wawla                         |7.0.2               |DONE      |ea:45:b3:82:b6:9d:50:16:95:e7:2e:34:e1:92:d5:b4:9b:69:90:d3:4f:2e:71:99:b0:be:40:80:27:1f:3e:b0
+		JustEnoughResources-1.16.3-0.12.0.100.jar         |Just Enough Resources         |jeresources                   |0.12.0.100          |DONE      |NOSIGNATURE
+		ImmersivePetroleum-1.16.4-3.1.0-2.jar             |Immersive Petroleum           |immersivepetroleum            |3.1.0-2             |DONE      |NOSIGNATURE
+		forge-1.16.4-35.1.4-universal.jar                 |Forge                         |forge                         |35.1.4              |DONE      |22:af:21:d8:19:82:7f:93:94:fe:2b:ac:b7:e4:41:57:68:39:87:b1:a7:5c:c6:44:f9:25:74:21:14:f5:0d:90
+		shetiphiancore-1.16-3.8.4.jar                     |ShetiPhian-Core               |shetiphiancore                |3.8.4               |DONE      |NOSIGNATURE
+		CraftingTweaks_1.16.3-12.2.0.jar                  |Crafting Tweaks               |craftingtweaks                |12.2.0              |DONE      |NOSIGNATURE
+		forge-1.16.4-35.1.4-server.jar                    |Minecraft                     |minecraft                     |1.16.4              |DONE      |NOSIGNATURE
+		mcw-bridges-1.0.4-mc1.16.4.jar                    |Macaw's Bridges               |mcwbridges                    |1.0.4               |DONE      |NOSIGNATURE
+		MouseTweaks-2.13-mc1.16.2.jar                     |Mouse Tweaks                  |mousetweaks                   |2.13                |DONE      |NOSIGNATURE
+		ImmersiveEngineering-1.16.4-4.1.2-129.jar         |Immersive Engineering         |immersiveengineering          |1.16.4-4.1.2-129    |DONE      |44:39:94:cf:1d:8c:be:3c:7f:a9:ee:f4:1e:63:a5:ac:61:f9:c2:87:d5:5b:d9:d6:8c:b5:3e:96:5d:8e:3f:b7
+		SilentLib-1.16.3-4.9.0+63.jar                     |Silent Lib                    |silentlib                     |4.9.0+63            |DONE      |NOSIGNATURE
+		pamhc2crops-1.16.3-1.0.1.jar                      |Pam's HarvestCraft 2 Crops    |pamhc2crops                   |version             |DONE      |NOSIGNATURE
+		SilentGear-1.16.3-2.4.4+189-hotfix.jar            |Silent Gear                   |silentgear                    |2.4.4+189           |DONE      |NOSIGNATURE
+		forbidden_arcanus-1.16.4-1.0.0.jar                |Forbidden & Arcanus           |forbidden_arcanus             |1.16.4-1.0.0        |DONE      |NOSIGNATURE
+		towers_of_the_wild-1.16.4-2.0.1.jar               |Towers Of The Wild            |towers_of_the_wild            |1.16.4-2.0.1        |DONE      |NOSIGNATURE
+		TrackAPI-1.16.4-forge-1.2.1.jar                   |TrackAPI                      |trackapi                      |1.2                 |DONE      |NOSIGNATURE
+		pamhc2foodextended-1.16.3-1.0.0.jar               |Pam's HarvestCraft 2 Food Exte|pamhc2foodextended            |version             |DONE      |NOSIGNATURE
+		curios-forge-1.16.4-4.0.3.0.jar                   |Curios API                    |curios                        |1.16.4-4.0.3.0      |DONE      |NOSIGNATURE
+		Patchouli-1.16.4-48.jar                           |Patchouli                     |patchouli                     |1.16.4-48           |DONE      |NOSIGNATURE
+		pamhc2foodcore-1.16.3-1.0.0.jar                   |Pam's HarvestCraft 2 Food Core|pamhc2foodcore                |version             |DONE      |NOSIGNATURE
+		ore_reeds-1.16.3-1.1.4.jar                        |Ore Reeds                     |ore_reeds                     |1.16.3-1.1.4        |DONE      |NOSIGNATURE
+		polymorph-forge-1.16.4-0.20.jar                   |Polymorph                     |polymorph                     |1.16.4-0.20         |DONE      |NOSIGNATURE
+		[1.16.4]+SecurityCraft+v1.8.20.2.jar              |SecurityCraft                 |securitycraft                 |v1.8.20.2           |DONE      |NOSIGNATURE
+		StorageDrawers-1.16.3-8.2.1.jar                   |Storage Drawers               |storagedrawers                |8.2.1               |DONE      |NOSIGNATURE
+		tombstone-1.16-6.2.0.jar                          |Corail Tombstone              |tombstone                     |1.16-6.2.0          |DONE      |NOSIGNATURE
+		structurize-0.13.100-RELEASE-universal.jar        |Structurize                   |structurize                   |0.13.100-RELEASE    |DONE      |NOSIGNATURE
+		Attained-Drops-1.16.3-7.2.0.jar                   |Attained Drops                |attained_drops                |7.2.0               |DONE      |NOSIGNATURE
+		minecolonies-0.13.480-BETA-universal.jar          |Minecolonies                  |minecolonies                  |0.13.480-BETA       |DONE      |NOSIGNATURE
+		AppleSkin-mc1.16.2-forge-1.0.14.jar               |AppleSkin                     |appleskin                     |1.0.14              |DONE      |NOSIGNATURE
+		ImmersiveRailroading-1.16.4-forge-1.8.0.1.jar     |Immersive Railroading         |immersiverailroading          |1.16.4-forge-1.8.0  |DONE      |NOSIGNATURE
+		UniversalModCore-1.16.4-forge-1.0.1.jar           |Universal Mod Core            |universalmodcore              |1.0.1               |DONE      |NOSIGNATURE
+		Aquaculture-1.16.4-2.1.7.jar                      |Aquaculture 2                 |aquaculture                   |1.16.4-2.1.7        |DONE      |NOSIGNATURE
+		SilentGems-1.16.3-3.7.5+108.jar                   |Silent's Gems 3               |silentgems                    |3.7.5+108           |DONE      |NOSIGNATURE
+		FriendlyFire-1.16.4-6.0.1.jar                     |FriendlyFire                  |friendlyfire                  |6.0.1               |DONE      |ea:45:b3:82:b6:9d:50:16:95:e7:2e:34:e1:92:d5:b4:9b:69:90:d3:4f:2e:71:99:b0:be:40:80:27:1f:3e:b0
+		terraqueous-1.16-1.7.7.jar                        |Terraqueous                   |terraqueous                   |1.7.7               |DONE      |NOSIGNATURE
+		forge-1.16.4-geckolib-3.0.0.jar                   |GeckoLib                      |geckolib3                     |3.0.0               |DONE      |NOSIGNATURE
+		ars_nouveau-1.16.4-1.9.2.jar                      |Ars Nouveau                   |ars_nouveau                   |1.9.2               |DONE      |NOSIGNATURE
+	Crash Report UUID: 5b011709-f9ce-44d5-9abf-cb6d1bc5ceaa
+	Player Count: 1 / 20; [ServerPlayerEntity['Chevalier_Blade'/188, l='ServerLevel[We Rise]', x=-80.06, y=68.00, z=27.72]]
+	Data Packs: vanilla, mod:mcwbridges (incompatible), mod:immersiveengineering (incompatible), mod:silentlib (incompatible), mod:pamhc2trees (incompatible), mod:wyrmroost (incompatible), mod:pamhc2crops (incompatible), mod:silentgear, mod:jei, mod:forbidden_arcanus (incompatible), mod:prefab (incompatible), mod:scannable (incompatible), mod:trackapi (incompatible), mod:pamhc2foodextended (incompatible), mod:curios, mod:patchouli (incompatible), mod:create (incompatible), mod:pamhc2foodcore (incompatible), mod:ore_reeds (incompatible), mod:cookingforblockheads (incompatible), mod:polymorph, mod:placebo (incompatible), mod:securitycraft (incompatible), mod:storagedrawers (incompatible), mod:tombstone, mod:structurize, mod:bookshelf, mod:pneumaticcraft, mod:attained_drops (incompatible), mod:minecolonies (incompatible), mod:morpheus (incompatible), mod:immersiverailroading (incompatible), mod:waila, mod:wawla, mod:silentgems, mod:jeresources, mod:friendlyfire (incompatible), mod:immersivepetroleum (incompatible), mod:forge, mod:appleskin, mod:aquaculture (incompatible), mod:terraqueous, mod:shetiphiancore, mod:geckolib3 (incompatible), mod:ars_nouveau, mod:universalmodcore (incompatible), mod:mousetweaks, mod:invtweaks (incompatible), mod:craftingtweaks (incompatible), mod:towers_of_the_wild
+	Is Modded: Definitely; Server brand changed to 'forge'
+	Type: Dedicated Server (map_server.txt)
